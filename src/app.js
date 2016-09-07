@@ -17,6 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 app.model(require('./models/user'))
+app.model(require('./models/project'))
 
 app.router(route => [
   route('/', mainView)

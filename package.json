@@ -35,6 +35,7 @@
   "license": "MIT",
   "dependencies": {
     "choo": "^3.2.2",
+    "granim": "^1.0.3",
     "js-md5": "^0.4.1",
     "localforage": "^1.4.2",
     "tachyons": "^4.2.0"
