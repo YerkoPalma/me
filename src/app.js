@@ -3,6 +3,7 @@ const choo = require('choo')
 const sf = require('sheetify')
 const localforage = require('localforage')
 const mainView = require('./views/main')
+const notFoundView = require('./views/not-found')
 
 sf('tachyons')
 sf('./assets/style/main.css', { global: true })
@@ -19,8 +20,9 @@ if (process.env.NODE_ENV !== 'production') {
 app.model(require('./models/user'))
 app.model(require('./models/project'))
 
-app.router(route => [
-  route('/', mainView)
+app.router('/404', route => [
+  route('/', mainView),
+  route('/404', notFoundView)
 ])
 
 // export app for tests

@@ -1,17 +1,13 @@
-// Element: footer 
-//
-// We can use bel instead of choo/html to keep elements modular
-// and allow them to easily move outisde of the app.
 const html = require('bel')
 
 function footer () {
   return html`
-    <footer class="pv4 ph3 ph5-m ph6-l mid-gray">
-      <small class="f6 db tc">© 2016 <b class="ttu">SOME COMPANY Inc</b>., All Rights Reserved</small>
+    <footer class="pv4 ph3 ph5-m ph6-l white">
+      <small class="f6 db tc">© ${new Date().getFullYear()} All Rights Reserved</small>
       <div class="tc mt3">
-        <a href="/language/" title="Language" class="f6 dib ph2 link mid-gray dim">Language</a>
-        <a href="/terms/"    title="Terms" class="f6 dib ph2 link mid-gray dim">Terms of Use</a>
-        <a href="/privacy/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Privacy</a>
+        <a href="/language/" title="Language" class="f6 dib ph2 link white dim">Language</a>
+        <a href="/terms/"    title="Terms" class="f6 dib ph2 link white dim">Terms of Use</a>
+        <a href="/privacy/"  title="Privacy" class="f6 dib ph2 link white dim">Privacy</a>
       </div>
     </footer>
   `
