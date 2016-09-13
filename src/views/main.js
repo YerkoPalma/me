@@ -23,6 +23,7 @@ module.exports = mainView
 
 function loadGranie () {
   window.Granim = Granim
+  /* eslint-disable no-unused-vars */
   var granimInstance = new Granim({
     element: '.canvas-image',
     direction: 'top-bottom',

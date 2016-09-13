@@ -6,7 +6,7 @@ function cover (state) {
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
       <div class="flipper">
         <div class="front">
-          <img src="https://s.gravatar.com/avatar/${md5(state.user.mail)}?s=180" class="br-100 center-block" style="display: block;" >
+          <img alt="Yerko Palma" src="https://s.gravatar.com/avatar/${md5(state.user.mail)}?s=180" class="br-100 center-block" style="display: block;" >
         </div>
         <div class="back">
           <div class="card">
