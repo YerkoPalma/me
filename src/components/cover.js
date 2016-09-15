@@ -11,10 +11,10 @@ function cover (state) {
         <div class="back">
           <div class="card">
             <a class="publicity" href="https://github.com/YerkoPalma" target="_blank">
-              <i class="fa fa-github uncolor" aria-hidden="true"></i>
+              <i class="icon-github-circled" aria-hidden="true"></i>
             </a>
             <a class="publicity" href="http://stackoverflow.com/users/3178237/yerko-palma" target="_blank">
-              <i class="fa fa-stack-overflow uncolor" aria-hidden="true"></i>
+              <i class="icon-stackoverflow" aria-hidden="true"></i>
             </a>
           </div>
         </div>
