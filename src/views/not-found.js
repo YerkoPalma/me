@@ -4,10 +4,17 @@ const html = require('choo/html')
 
 const notFound = (state, prev, send) => {
   return html`
-    <div class="error">
-      <h1>notFound</h1>
-      <canvas class="error-canvas" onload=${loadGranie}></canvas>
-    </div>
+  <section class="mw5 mw7-ns center pa5">
+    <h1 class="mt0 tc ttu f-subheadline light-red">Error 404</h1>
+    <p class="lh-copy measure f3 tc fw6 near-white">
+      Lo siento, la página que buscas no existe (aún). Esto es lo que hay por ahora:
+    </p>
+    <ul class="list ph3 ph5-ns pv4 center flex justify-around">
+      <li class="dib mr2"><a href="/" class="f5 f4-ns b db pa2 tracked link dim near-white">Inicio</a></li>
+      <li class="dib mr2"><a href="${state.user.github}" class="f5 tracked f4-ns b db pa2 link dim near-white">Proyectos</a></li>
+    </ul>
+    <canvas class="error-canvas" onload=${loadGranie}></canvas>
+  </section>
   `
 }
 
