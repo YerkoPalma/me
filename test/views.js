@@ -21,7 +21,7 @@ describe('choo-app', () => {
   it('awesome SEO', () => {
     const h1 = app.$$('h1')
     assert.equal(h1.length, 1, 'Must have only one h1 tag per page')
-    assert.equal(h1[0].className, 'global-header', 'Must have the right css class')
+    assert(h1[0].classList.contains('global-header'), 'Must have the right css class')
     // all images with an alt tag
     const imgs = app.$$('img')
     Array.prototype.forEach.call(imgs, img => {
