@@ -8,7 +8,7 @@
     "dev:less": "lessc src/assets/style/main.less src/assets/style/main.css",
     "dev:js": "budo src/app.js --open --live --pushstate --host 0.0.0.0 --port 8080 --",
     "dev": "gazer -p 'src/assets/style/**/*.less' npm run dev:less & npm run dev:js",
-    "test": "standard --verbose | snazzy && NODE_ENV=test mochify",
+    "test": "standard --verbose | snazzy",
     "build:js": "NODE_ENV=production browserify -e src/app.js -o dist/app.js -t envify -t sheetify/transform -g uglifyify | uglifyjs",
     "build": "npm run copy && npm run build:js",
     "deploy": "npm run build && surge ./dist"
