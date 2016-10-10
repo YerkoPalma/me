@@ -9,7 +9,7 @@
     "dev:js": "budo src/app.js --open --live --pushstate --host 0.0.0.0 --port 8080 --",
     "dev": "gazer -p 'src/assets/style/**/*.less' npm run dev:less & npm run dev:js",
     "test": "standard --verbose | snazzy",
-    "build:js": "NODE_ENV=production browserify -e src/app.js -o dist/app.js -t envify -t sheetify/transform -g uglifyify | uglifyjs",
+    "build:js": "NODE_ENV=production browserify -e src/app.js -o dist/app.js -t envify -t sheetify/transform -g es2040 -g uglifyify | uglifyjs",
     "build": "npm run copy && npm run build:js",
     "deploy": "npm run build && surge ./dist"
   },
@@ -40,6 +40,9 @@
     "tachyons": "^4.5.3"
   },
   "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-es2015-loose": "^8.0.0",
     "babel-preset-es2040": "^1.1.1",
     "browserify": "^13.1.0",
     "budo": "^9.2.1",
