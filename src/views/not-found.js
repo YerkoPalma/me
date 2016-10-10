@@ -4,7 +4,7 @@ const html = require('choo/html')
 
 const notFound = (state, prev, send) => {
   return html`
-  <section class="mw5 mw7-ns center pa5">
+  <section class="mw-100 mw7-ns center pa5-ns pa5-m pa5-l pa4">
     <h1 class="mt0 tc ttu f-subheadline light-red">Error 404</h1>
     <p class="lh-copy measure f3 tc fw6 near-white">
       Lo siento, la página que buscas no existe (aún). Esto es lo que hay por ahora:
