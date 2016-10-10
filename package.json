@@ -4,7 +4,7 @@
   "description": "Awesome site created with choo-genesis",
   "main": "src/app.js",
   "scripts": {
-    "copy": "mkdir -p dist/src && cp -R src/assets dist/src && mkdir -p dist/assets/style && cp CNAME index.html dist/ && cp src/assets/style/main.css dist/assets/style",
+    "copy": "mkdir -p dist/src && cp -R src/assets dist/src && mkdir -p dist/assets/style && cp CNAME favicon.ico index.html dist/ && cp src/assets/style/main.css dist/assets/style",
     "dev:less": "lessc src/assets/style/main.less src/assets/style/main.css",
     "dev:js": "budo src/app.js --open --live --pushstate --host 0.0.0.0 --port 8080 --",
     "dev": "gazer -p 'src/assets/style/**/*.less' npm run dev:less & npm run dev:js",
