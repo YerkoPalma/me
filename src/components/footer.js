@@ -1,4 +1,4 @@
-const html = require('bel')
+const html = require('choo/html')
 
 function footer () {
   return html`

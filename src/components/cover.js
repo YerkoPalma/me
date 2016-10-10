@@ -1,4 +1,4 @@
-const html = require('bel')
+const html = require('choo/html')
 const md5 = require('js-md5')
 
 function cover (state) {

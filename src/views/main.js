@@ -1,13 +1,12 @@
 const html = require('choo/html')
 const Granim = require('granim')
-const localforage = require('localforage')
 const navbar = require('../components/navbar')
 const footer = require('../components/footer')
 const cover = require('../components/cover')
 
 const mainView = (state, prev, send) => {
   return html`
-    <div class="container" onload=${loadLocalState(this, state, send)}>
+    <div class="container">
       ${navbar(state)}
       <canvas class="canvas-image" onload=${loadGranie}></canvas>
       <div class="mw5 mw7-ns center ph5-ns ma5">
@@ -40,16 +39,4 @@ function loadGranie () {
       }
     }
   })
-}
-
-function loadLocalState (element, state, send) {
-  return function () {
-    if (state.user.initial) {
-      localforage.getItem('app').then(localState => {
-        if (localState) send('user:init', { localState })
-      }).catch(err => {
-        console.log(err)
-      })
-    }
-  }
 }
