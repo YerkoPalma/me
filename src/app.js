@@ -1,32 +1,23 @@
-/* global navigator */
-const choo = require('choo')
+const Router = require('singleton-router')
 const sf = require('sheetify')
-const offline = require('choo-offline')
 const mainView = require('./views/main')
 const notFoundView = require('./views/not-found')
 
 sf('tachyons')
 sf('./assets/style/main.css', { global: true })
 
-const app = choo()
+const initState = {
+  username: 'Yerko Palma',
+  mail: 'yerko.palma@usach.cl',
+  github: 'https://github.com/YerkoPalma',
+  stackoverflow: 'https://stackoverflow.com/users/3178237/yerko-palma',
+  subtitle: 'Full stack developer',
+  description: 'Desarrollador full stack, con preferencia por Javascript <3. También soy aficionado del diseño, con espiritu emprendedor. Actualmente trabajando como desarrollador .NET/Js, pero con ganas de ayudar en tu próximo proyecto.',
+  initial: true
+}
+const router = Router()
+router.addRoute('/', mainView(initState))
+router.notFound('/404', notFoundView(initState))
 
-offline(offline => {
-  if (process.env.NODE_ENV !== 'production') {
-    const log = require('choo-log')
-    app.use(log())
-  }
-  app.use(offline)
-
-  app.model(require('./models/user'))
-
-  app.router('/404', route => [
-    route('/', mainView),
-    route('/404', notFoundView)
-  ])
-
-  const tree = app.start()
-  document.body.appendChild(tree)
-})
-
-// export app for tests
-module.exports = app
+router.setRoot('/')
+router.start()

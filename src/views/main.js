@@ -1,19 +1,20 @@
-const html = require('choo/html')
+const html = require('bel')
 const Granim = require('granim')
 const navbar = require('../components/navbar')
 const footer = require('../components/footer')
 const cover = require('../components/cover')
 
-const mainView = (state, prev, send) => {
+const mainView = initialState => (params, state) => {
+  state = state || initialState
   return html`
     <div class="container">
       ${navbar(state)}
       <canvas class="canvas-image" onload=${loadGranie}></canvas>
       <div class="mw5 mw7-ns center ph5-ns ma5">
         ${cover(state)}
-        <h1 class="global-header mb0">${state.user.username}</h1>
-        <p class="tc f3 light-red fw6 mv0">${state.user.subtitle}</p>
-        <p class="f5 near-white lh-copy tc fw6">${state.user.description}</p>
+        <h1 class="global-header mb0">${state.username}</h1>
+        <p class="tc f3 light-red fw6 mv0">${state.subtitle}</p>
+        <p class="f5 near-white lh-copy tc fw6">${state.description}</p>
       </div>
       ${footer()}
     </div>
