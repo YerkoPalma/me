@@ -19,6 +19,8 @@ const notFound = initialState => (params, state) => {
   `
 }
 
+module.exports = notFound
+
 function loadGranie () {
   /* eslint-disable no-unused-vars */
   var granimInstance = new Granim({
@@ -37,5 +39,3 @@ function loadGranie () {
     }
   })
 }
-
-module.exports = notFound

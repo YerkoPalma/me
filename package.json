@@ -6,7 +6,7 @@
   "scripts": {
     "copy": "mkdir -p dist/src && cp -R src/assets dist/src && mkdir -p dist/assets/style && cp CNAME favicon.ico index.html dist/ && cp src/assets/style/main.css dist/assets/style",
     "dev:less": "lessc src/assets/style/main.less src/assets/style/main.css",
-    "dev:js": "budo src/app.js --open --live --pushstate --host 0.0.0.0 --port 8080 --live-port 8081 --",
+    "dev:js": "budo src/app.js --open --pushstate --host 0.0.0.0 --port 8080 --",
     "start": "gazer -p 'src/assets/style/**/*.less' npm run dev:less & npm run dev:js",
     "test": "standard --verbose | snazzy",
     "build:js": "NODE_ENV=production browserify -e src/app.js -o dist/app.js -t envify -t sheetify/transform -g uglifyify | uglifyjs",

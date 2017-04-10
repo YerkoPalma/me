@@ -17,7 +17,7 @@ const initState = {
 }
 const router = Router()
 router.addRoute('/', mainView(initState))
-router.notFound('/404', notFoundView(initState))
+router.notFound(notFoundView(initState))
 
 router.setRoot('/')
 router.start()
