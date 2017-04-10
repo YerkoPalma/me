@@ -4,23 +4,24 @@ const navbar = require('../components/navbar')
 const footer = require('../components/footer')
 const cover = require('../components/cover')
 
-const mainView = initialState => (params, state) => {
-  state = state || initialState
-  return html`
-    <div class="container">
-      ${navbar(state)}
-      <canvas class="canvas-image" onload=${loadGranie}></canvas>
-      <div class="mw5 mw7-ns center ph5-ns ma5">
-        ${cover(state)}
-        <h1 class="global-header mb0">${state.username}</h1>
-        <p class="tc f3 light-red fw6 mv0">${state.subtitle}</p>
-        <p class="f5 near-white lh-copy tc fw6">${state.description}</p>
+const mainView = function (initialState) { 
+  return function (params, state) {
+    state = state || initialState
+    return html`
+      <div class="container">
+        ${navbar(state)}
+        <canvas class="canvas-image" onload=${loadGranie}></canvas>
+        <div class="mw5 mw7-ns center ph5-ns ma5">
+          ${cover(state)}
+          <h1 class="global-header mb0">${state.username}</h1>
+          <p class="tc f3 light-red fw6 mv0">${state.subtitle}</p>
+          <p class="f5 near-white lh-copy tc fw6">${state.description}</p>
+        </div>
+        ${footer()}
       </div>
-      ${footer()}
-    </div>
-  `
+    `
+  }
 }
-
 module.exports = mainView
 
 function loadGranie () {
