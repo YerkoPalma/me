@@ -2,8 +2,8 @@
 const Granim = require('granim')
 const html = require('bel')
 
-const notFound = function (initialState) { 
-  return function (params, state)  {
+const notFound = function (initialState) {
+  return function (params, state) {
     state = state || initialState
     return html`
     <section class="mw-100 mw7-ns center pa5-ns pa5-m pa5-l pa4">

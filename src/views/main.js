@@ -4,7 +4,7 @@ const navbar = require('../components/navbar')
 const footer = require('../components/footer')
 const cover = require('../components/cover')
 
-const mainView = function (initialState) { 
+const mainView = function (initialState) {
   return function (params, state) {
     state = state || initialState
     return html`

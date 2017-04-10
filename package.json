@@ -9,7 +9,7 @@
     "dev:js": "budo src/app.js --open --pushstate --host 0.0.0.0 --port 8080 --",
     "start": "gazer -p 'src/assets/style/**/*.less' npm run dev:less & npm run dev:js",
     "test": "standard --verbose | snazzy",
-    "build:js": "NODE_ENV=production browserify -e src/app.js -o dist/app.js -t envify -t sheetify/transform -g es2040 -g yo-yoify -g uglifyify | uglifyjs",
+    "build:js": "NODE_ENV=production browserify -e src/app.js -o dist/app.js -t envify -t sheetify/transform -g es2040 -g uglifyify | uglifyjs",
     "build": "npm run copy && npm run build:js",
     "deploy": "npm run build && gh-pages -d dist"
   },
