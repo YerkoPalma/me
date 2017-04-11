@@ -1,16 +1,17 @@
 {
   "name": "website",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Awesome site created with choo-genesis",
   "main": "src/app.js",
   "scripts": {
     "copy": "mkdir -p dist/src && cp -R src/assets dist/src && mkdir -p dist/assets/style && cp service-worker.js CNAME favicon.ico index.html dist/ && cp src/assets/style/main.css dist/assets/style",
+    "copy:404": "cp dist/index.html dist/404.html",
     "dev:less": "lessc src/assets/style/main.less src/assets/style/main.css",
     "dev:js": "budo src/app.js --open --pushstate --host 0.0.0.0 --port 8080 --",
     "start": "gazer -p 'src/assets/style/**/*.less' npm run dev:less & npm run dev:js",
     "test": "standard --verbose | snazzy",
     "build:js": "NODE_ENV=production browserify -e src/app.js -o dist/app.js -t envify -t sheetify/transform -g es2040 -g uglifyify | uglifyjs",
-    "build": "npm run copy && npm run build:js",
+    "build": "npm run copy && npm run copy:404 && npm run build:js",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [
