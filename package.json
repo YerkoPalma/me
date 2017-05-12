@@ -2,28 +2,12 @@
   "name": "website",
   "version": "1.0.2",
   "description": "Awesome site created with choo-genesis",
-  "main": "src/app.js",
+  "main": "index.js",
+  "private": true,
   "scripts": {
-    "copy": "mkdir -p dist/src && cp -R src/assets dist/src && mkdir -p dist/assets/style && cp service-worker.js CNAME favicon.ico index.html dist/ && cp src/assets/style/main.css dist/assets/style",
-    "copy:404": "cp dist/index.html dist/404.html",
-    "dev:less": "lessc src/assets/style/main.less src/assets/style/main.css",
-    "dev:js": "budo src/app.js --open --pushstate --host 0.0.0.0 --port 8080 --",
-    "start": "gazer -p 'src/assets/style/**/*.less' npm run dev:less & npm run dev:js",
     "test": "standard --verbose | snazzy",
-    "build:js": "NODE_ENV=production browserify -e src/app.js -o dist/app.js -t envify -t sheetify/transform -g es2040 -g uglifyify | uglifyjs",
-    "build": "npm run copy && npm run copy:404 && npm run build:js",
-    "deploy": "npm run build && gh-pages -d dist"
-  },
-  "keywords": [
-    "choo",
-    "generator",
-    "scaffold"
-  ],
-  "browserify": {
-    "transform": [
-      "sheetify/transform",
-      "es2040"
-    ]
+    "start": "bankai index.js -A 0.0.0.0 -p 8080 -a .",
+    "build": "NODE_ENV=production bankai build --optimize dist/"
   },
   "standard": {
     "ignore": [
@@ -35,23 +19,16 @@
   "license": "MIT",
   "dependencies": {
     "bel": "^4.6.0",
-    "granim": "^1.0.6",
     "idb-keyval": "^2.3.0",
     "js-md5": "^0.4.1",
+    "sheetify": "^6.0.2",
     "singleton-router": "^1.2.0",
-    "tachyons": "^4.5.3"
+    "tachyons": "^4.7.1"
   },
   "devDependencies": {
-    "browserify": "^14.3.0",
-    "budo": "^9.2.1",
-    "envify": "^4.0.0",
-    "es2040": "^1.2.5",
+    "bankai": "^7.6.1",
     "gh-pages": "^1.0.0",
-    "less": "^2.7.1",
-    "sheetify": "^6.0.1",
     "snazzy": "^7.0.0",
-    "standard": "^10.0.1",
-    "uglifyify": "^3.0.3",
-    "uglifyjs": "^2.4.10"
+    "standard": "^10.0.1"
   }
 }
