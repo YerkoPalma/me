@@ -1,3 +1,4 @@
+/* global navigator */
 var Router = require('singleton-router')
 var css = require('sheetify')
 
@@ -13,8 +14,9 @@ var state = {
   initial: true
 }
 
-var router = Router({ onRender: onRender })
+registerServiceWorker('/service-worker.js')
 
+var router = Router({ onRender: onRender })
 router.addRoute('/', require('./views/main'))
 router.notFound(require('./views/notFound'))
 router.setStore(state)
@@ -50,5 +52,35 @@ function onRender (currentView, previousView, cb) {
     // previousView.classList.add('t')
     previousView.style.transition = 'all 0.5s'
     previousView.classList.add('o-0')
+  }
+}
+
+function registerServiceWorker (swPath) {
+  if ('serviceWorker' in navigator) {
+    if (process.env.NODE_ENV === 'production') {
+      navigator.serviceWorker.register(window.location.origin + swPath).then(function (reg) {
+        reg.onupdatefound = function () {
+          var installingWorker = reg.installing
+
+          installingWorker.onstatechange = function () {
+            switch (installingWorker.state) {
+              case 'installed':
+                if (navigator.serviceWorker.controller) {
+                  console.log('New or updated content is available.')
+                } else {
+                  console.log('Content is now available offline!')
+                }
+                break
+              case 'redundant':
+                console.error('The installing service worker became redundant.')
+                break
+            }
+          }
+        }
+      })
+      .catch(function (e) {
+        console.error('Error during service worker registration:', e)
+      })
+    }
   }
 }
