@@ -22,7 +22,7 @@
     "idb-keyval": "^2.3.0",
     "js-md5": "^0.4.1",
     "sheetify": "^6.0.2",
-    "singleton-router": "^1.2.0",
+    "singleton-router": "^1.4.2",
     "tachyons": "^4.7.1"
   },
   "devDependencies": {

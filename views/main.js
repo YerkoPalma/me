@@ -14,9 +14,9 @@ function mainView (params, state) {
   return html`
   <main class="w-100 pa2 bg-black min-vh-100">
     <div class="pa3 bg-white w-100 h-100 overflow-y-scroll ${container}">
-      <div class="mv5 cf w-100">
+      <div class="mv4 mv5-lcf w-100">
         ${navbar(state)}
-        <div class="mw5 mw7-ns center ph5-ns ma5">
+        <div class="mw5 mw7-ns center ph5-ns mh5">
           ${cover(state)}
           <h1 class="near-black lh-copy tc mb0">${state.username}</h1>
           <p class="tc f3 light-red fw6 mv0">${state.subtitle}</p>

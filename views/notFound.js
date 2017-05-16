@@ -10,10 +10,10 @@ var container = css`
 
 function notFoundView (params, store) {
   return html`<main class="w-100 pa2 bg-black min-vh-100">
-    <div class="pa7 bg-white w-100 h-100 overflow-y-scroll ${container}">
-      <h1 class=" dib f-headline ma0 lh-title black tc w-100">
-        <span class="w-50 tr br bw3 pa3 pr5">404</span>
-        <span class="f-subheadline v-mid lh-solid dib tl w-50 word-wrap pl4">No encontrado</span>
+    <div class="pa7-l pt6-l pv5 bg-white w-100 h-100 overflow-y-scroll ${container}">
+      <h1 class=" dib f-headline word-wrap ma0 lh-title black tl w-100">
+        <span class="w-100 w-25-l tr br-l tc db dib-l bw3-l pa3-l pr5-l">404</span>
+        <span class="f-subheadline-l f2 v-mid tc tl-l lh-solid dib tl w-100 w-25-l word-wrap pl4-l">No encontrado</span>
       </h1>
     </div>
   </main>`

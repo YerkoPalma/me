@@ -1,7 +1,7 @@
 /* eslint-env serviceworker */
 /* global fetch URL Request */
 
-var version = '2.0.0'
+var version = '2.0.1'
 var cacheName = 'ypsw-v' + version
 
 var filesToCache = [
