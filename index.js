@@ -9,6 +9,8 @@ var state = {
   mail: 'yerko.palma@usach.cl',
   github: 'https://github.com/YerkoPalma',
   stackoverflow: 'https://stackoverflow.com/users/3178237/yerko-palma',
+  linkedin: '',
+  twitter: '',
   subtitle: 'Full stack developer',
   description: 'Desarrollador full stack, con preferencia por Javascript <3. También soy aficionado del diseño, con espiritu emprendedor. Actualmente trabajando como desarrollador .NET/Js, pero con ganas de ayudar en tu próximo proyecto.',
   initial: true
@@ -49,7 +51,6 @@ function onRender (currentView, previousView, cb) {
     })
   })
   if (previousView && previousView.classList) {
-    // previousView.classList.add('t')
     previousView.style.transition = 'all 0.5s'
     previousView.classList.add('o-0')
   }
