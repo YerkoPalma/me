@@ -1,7 +1,7 @@
 /* eslint-env serviceworker */
 /* global fetch URL Request */
 
-var version = '2.0.1'
+var version = '3.0.0'
 var cacheName = 'ypsw-v' + version
 
 var filesToCache = [
@@ -10,7 +10,12 @@ var filesToCache = [
   '/CNAME',
   '/bundle.js',
   '/favicon.ico',
-  '/bundle.css'
+  '/bundle.css',
+  'https://s.gravatar.com/avatar/d809533c5ce964b709e2b38e6573973b?s=240',
+  'https://s.gravatar.com/avatar/d809533c5ce964b709e2b38e6573973b?s=180',
+  'https://api.urlbox.io/v1/ca482d7e-9417-4569-90fe-80f7c5e1c781/f916f765f43f7acfc10fda551be806ccc56f82e5/png?url=palmacontabilidad.cl',
+  'https://api.urlbox.io/v1/ca482d7e-9417-4569-90fe-80f7c5e1c781/b015cb4e4f6c3a53f771737729abeb9f97ce54bc/png?url=matrimonio.palmanavea.com',
+  'https://api.urlbox.io/v1/ca482d7e-9417-4569-90fe-80f7c5e1c781/15a27488df9d7bda08381c4236050a637745b7bb/png?url=salvador.palmanavea.com'
 ]
 
 var urlsToCache = []
