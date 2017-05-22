@@ -1,23 +1,16 @@
 /* eslint-env serviceworker */
 /* global fetch URL Request */
 
-var version = '1.0.2'
+var version = '2.0.1'
 var cacheName = 'ypsw-v' + version
 
 var filesToCache = [
   '/',
   '/index.html',
   '/CNAME',
-  '/app.js',
+  '/bundle.js',
   '/favicon.ico',
-  '/assets/style/main.css',
-  '/src/assets/font/fontello.eot',
-  '/src/assets/font/fontello.svg',
-  '/src/assets/font/fontello.ttf',
-  '/src/assets/font/fontello.woff',
-  '/src/assets/font/fontello.woff2',
-  '/src/assets/images/road.jpg',
-  '/src/assets/images/sky.jpg'
+  '/bundle.css'
 ]
 
 var urlsToCache = []
