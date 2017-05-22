@@ -7,7 +7,7 @@
   "scripts": {
     "test": "standard --verbose | snazzy",
     "start": "bankai index.js -A 0.0.0.0 -p 8080 -a .",
-    "build": "NODE_ENV=production bankai build --optimize dist/",
+    "build": "NODE_ENV=production bankai build --optimize dist/ && cp service-worker.js CNAME favicon.ico dist/",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "standard": {
