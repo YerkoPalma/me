@@ -36,7 +36,7 @@ var renderProjects = function (projects) {
     </a>`
   })
 }
-function projectsView (params, state) {
+function projectsView (state) {
   var projects = state.projects
   console.log('projects view', projects)
   return html`

@@ -30,8 +30,8 @@ var octoCat = css`
     }
   }`
 
-function projectView (params, state) {
-  var project = state.projects[params.project]
+function projectView (state) {
+  var project = state.projects[state.params.project]
   console.log('project view', state.projects)
   if (!project) return require('./notFound')()
   return html`<main class="w-100 pa2 bg-black min-vh-100"">

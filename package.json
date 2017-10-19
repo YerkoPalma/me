@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "standard --verbose | snazzy",
-    "start": "bankai index.js -A 0.0.0.0 -p 8080 -a .",
+    "start": "budo -p 8080 -H 0.0.0.0 index.js -- -t sheetify",
     "build": "NODE_ENV=production bankai build --optimize dist/ && cp 404.html service-worker.js CNAME favicon.ico dist/",
     "deploy": "npm run build && gh-pages -d dist"
   },
@@ -20,14 +20,13 @@
   "license": "MIT",
   "dependencies": {
     "bel": "^4.6.0",
-    "idb-keyval": "^2.3.0",
+    "choo": "^6.4.3",
     "js-md5": "^0.4.1",
     "sheetify": "^6.0.2",
-    "singleton-router": "^2.0.0",
     "tachyons": "^4.7.1"
   },
   "devDependencies": {
-    "bankai": "^7.6.1",
+    "budo": "^10.0.4",
     "gh-pages": "^1.0.0",
     "snazzy": "^7.0.0",
     "standard": "^10.0.1"

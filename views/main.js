@@ -10,7 +10,7 @@ var container = css`
     transition: all 0.5s;
   }
 `
-function mainView (params, state) {
+function mainView (state) {
   return html`
   <main class="w-100 pa2 bg-black min-vh-100">
     <div class="pa3 bg-white w-100 h-100 overflow-y-scroll ${container}">
