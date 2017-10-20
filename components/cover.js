@@ -1,5 +1,4 @@
 const html = require('bel')
-const md5 = require('js-md5')
 const css = require('sheetify')
 
 var flipperContainer = css`
@@ -57,7 +56,7 @@ function cover (state) {
     <div class="${flipperContainer}" ontouchstart="this.classList.toggle('hover');">
       <div class="flipper relative">
         <div class="front absolute top-0">
-          <img alt="Yerko Palma" src="https://s.gravatar.com/avatar/${md5(state.mail)}?s=180" class="br-100 center-block db" >
+          <img alt="Yerko Palma" src="https://s.gravatar.com/avatar/d809533c5ce964b709e2b38e6573973b?s=180" class="br-100 center-block db" >
         </div>
         <div class="back br-100 absolute bg-light-red top-0">
           <div class="card w-100 h-100 silver">

@@ -40,7 +40,7 @@ function projectsView (state) {
   var projects = state.projects
   console.log('projects view', projects)
   return html`
-  <main class="w-100 pa2 bg-black min-vh-100">
+  <main class="helvetica w-100 pa2 bg-black min-vh-100">
     <div class="pa3 bg-white w-100 h-100 overflow-y-scroll ${container}">
       <h1 class="f1 ma0 lh-title black">Proyectos</h1>
       <div class="mv5 cf w-100">
