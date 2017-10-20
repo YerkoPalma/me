@@ -24,7 +24,7 @@ var renderProjects = function (projects) {
   bgColors.sort(function () { return 0.5 - Math.random() })
   return projects.map(function (project, i) {
     return html`
-    <a data-route="/projects/${i}" "class="link pointer bg-animate hover-bg-${bgColors[i]} fl w-100 w-third-m w-25-ns">
+    <a href="/projects/${i}" "class="link pointer bg-animate hover-bg-${bgColors[i]} fl w-100 w-third-m w-25-ns">
         ${project && project.title
           ? html`<div class="aspect-ratio aspect-ratio--16x9">
             <h3 class="db pl3 f2 lh-solid bg-center cover aspect-ratio--object ma0">${project.title}</h3>
