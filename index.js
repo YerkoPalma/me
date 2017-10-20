@@ -30,6 +30,4 @@ app.route('/', require('./views/main'))
 app.route('/projects', require('./views/projects'))
 app.route('/projects/:project', require('./views/project'))
 app.route('/*', require('./views/notFound'))
-
-var tree = app.start()
-document.body.appendChild(tree)
+app.mount('body')

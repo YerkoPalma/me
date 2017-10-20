@@ -11,7 +11,7 @@ var container = css`
 `
 function mainView (state) {
   return html`
-  <main class="helvetica w-100 pa2 bg-black min-vh-100">
+  <body class="helvetica w-100 pa2 bg-black min-vh-100">
     <div class="pa3 bg-white w-100 h-100 overflow-y-scroll ${container}">
       <div class="mv4 mv5-lcf w-100">
         ${navbar(state)}
@@ -26,7 +26,7 @@ function mainView (state) {
         </footer>
       </div>
     </div>
-  </main>`
+  </body>`
 }
 
 module.exports = mainView

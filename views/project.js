@@ -34,7 +34,7 @@ function projectView (state) {
   var project = state.projects[state.params.project]
   console.log('project view', state.projects)
   if (!project) return require('./notFound')()
-  return html`<main class="helvetica w-100 pa2 bg-black min-vh-100"">
+  return html`<body class="helvetica w-100 pa2 bg-black min-vh-100"">
     <div id="projectBody" class="pa3 bg-white w-100 h-100 overflow-y-scroll ${container}">
       <a class="pointer link" href="/projects">
         <svg class="i-arrow-left" viewBox="0 0 32 32" width="64" height="64" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -45,7 +45,7 @@ function projectView (state) {
       ${octolink(project.github)}
       ${project.body}
     </div>
-  </main>`
+  </body>`
 }
 function octolink (repo) {
   if (repo) {

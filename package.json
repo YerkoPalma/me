@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "standard --verbose | snazzy",
-    "start": "budo -p 8080 -H 0.0.0.0 index.js -- -t sheetify",
+    "start": "budo -p 8080 -H 0.0.0.0 index.js:bundle.js -- -t sheetify",
     "build": "NODE_ENV=production bankai build --optimize dist/ && cp 404.html service-worker.js CNAME favicon.ico dist/",
     "deploy": "npm run build && gh-pages -d dist"
   },
