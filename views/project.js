@@ -42,7 +42,9 @@ function projectView (state) {
       </a>
       <h1 class="f1 w-75 dip absolute top-0 left-2-l left--2 mh5 mt6 mt4-l bg-white">${project.title} ${siteLink(project.site)}</h1>
       ${octolink(project.github)}
-      ${project.body}
+      <article class="mt7 ph6-l mt0-l">
+        ${project.body}
+      </article>
     </div>
   </body>`
 }
