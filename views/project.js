@@ -1,4 +1,4 @@
-var html = require('bel')
+var html = require('choo/html')
 var css = require('sheetify')
 
 var container = css`
@@ -32,7 +32,6 @@ var octoCat = css`
 
 function projectView (state) {
   var project = state.projects[state.params.project]
-  console.log('project view', state.projects)
   if (!project) return require('./notFound')()
   return html`<body class="helvetica w-100 pa2 bg-black min-vh-100"">
     <div id="projectBody" class="pa3 bg-white w-100 h-100 overflow-y-scroll ${container}">
