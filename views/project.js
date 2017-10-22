@@ -1,4 +1,4 @@
-var html = require('bel')
+var html = require('choo/html')
 var css = require('sheetify')
 
 var container = css`
@@ -30,21 +30,23 @@ var octoCat = css`
     }
   }`
 
-function projectView (params, state) {
-  var project = state.projects[params.project]
-  console.log('project view', state.projects)
+function projectView (state) {
+  var project = state.projects[state.params.project]
   if (!project) return require('./notFound')()
-  return html`<main class="w-100 pa2 bg-black min-vh-100"">
+  return html`<body class="helvetica w-100 pa2 bg-black min-vh-100"">
     <div id="projectBody" class="pa3 bg-white w-100 h-100 overflow-y-scroll ${container}">
-      <a class="pointer link" data-route="/projects">
+      <a class="pointer link black" href="/projects">
         <svg class="i-arrow-left" viewBox="0 0 32 32" width="64" height="64" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
           <path d="M10 6 L2 16 10 26 M2 16 L30 16" />
         </svg>
       </a>
       <h1 class="f1 w-75 dip absolute top-0 left-2-l left--2 mh5 mt6 mt4-l bg-white">${project.title} ${siteLink(project.site)}</h1>
       ${octolink(project.github)}
+      <article class="mt7 ph6-l mt0-l">
+        ${project.body}
+      </article>
     </div>
-  </main>`
+  </body>`
 }
 function octolink (repo) {
   if (repo) {

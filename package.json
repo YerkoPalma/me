@@ -6,30 +6,38 @@
   "private": true,
   "scripts": {
     "test": "standard --verbose | snazzy",
-    "start": "bankai index.js -A 0.0.0.0 -p 8080 -a .",
-    "build": "NODE_ENV=production bankai build --optimize dist/ && cp 404.html service-worker.js CNAME favicon.ico dist/",
+    "start": "budo -p 8080 -H 0.0.0.0 index.js:bundle.js -- -t sheetify",
+    "build": "NODE_ENV=production npm run build:js && npm run build:html && npm run build:assets",
+    "build:js": "mkdir -p dist && browserify -t sheetify -p [ css-extract -o dist/bundle.css ] -p tinyify index.js -o dist/bundle.js",
+    "build:html": "./node_modules/.bin/htmlminify -o dist/index.html index.html",
+    "build:assets": "echo yerkopalma.me > dist/CNAME && cp favicon.ico dist && workbox-cli generate:sw",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "standard": {
     "ignore": [
       "service-worker.js",
-      "dist/"
+      "dist/",
+      "workbox-cli-config.js"
     ]
   },
   "author": "Yerko Palma",
   "license": "MIT",
   "dependencies": {
-    "bel": "^4.6.0",
-    "idb-keyval": "^2.3.0",
-    "js-md5": "^0.4.1",
-    "sheetify": "^6.0.2",
-    "singleton-router": "^2.0.0",
-    "tachyons": "^4.7.1"
+    "bel": "^5.1.3",
+    "choo": "^6.5.0",
+    "choo-service-worker": "^2.3.1",
+    "marli": "^1.1.0",
+    "sheetify": "^6.2.0",
+    "tachyons": "^4.8.1"
   },
   "devDependencies": {
-    "bankai": "^7.6.1",
+    "browserify": "^14.5.0",
+    "budo": "^10.0.4",
+    "css-extract": "^1.2.0",
     "gh-pages": "^1.0.0",
+    "html-minify": "^0.3.2",
     "snazzy": "^7.0.0",
-    "standard": "^10.0.1"
+    "standard": "^10.0.3",
+    "tinyify": "^2.2.0"
   }
 }
