@@ -35,7 +35,7 @@ function projectView (state) {
   if (!project) return require('./notFound')()
   return html`<body class="helvetica w-100 pa2 bg-black min-vh-100"">
     <div id="projectBody" class="pa3 bg-white w-100 h-100 overflow-y-scroll ${container}">
-      <a class="pointer link" href="/projects">
+      <a class="pointer link black" href="/projects">
         <svg class="i-arrow-left" viewBox="0 0 32 32" width="64" height="64" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
           <path d="M10 6 L2 16 10 26 M2 16 L30 16" />
         </svg>
