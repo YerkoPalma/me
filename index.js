@@ -22,6 +22,9 @@ app.use((state, emitter) => {
     'palma-contabilidad': {title: 'Palma contabilidad', description: 'Contador independiente', site: 'http://palmacontabilidad.cl/', body: require('./views/_contabilidad')}
   }
 })
+if (process.env.NODE_ENV === 'production') {
+  app.use(require('choo-service-worker')())
+}
 app.route('/', require('./views/main'))
 app.route('/projects', require('./views/projects'))
 app.route('/projects/:project', require('./views/project'))
