@@ -1,6 +1,5 @@
 var choo = require('choo')
 var css = require('sheetify')
-var html = require('bel')
 var app = choo()
 
 css('tachyons')
@@ -15,16 +14,13 @@ app.use((state, emitter) => {
   state.subtitle = 'Full stack developer'
   state.description = 'Desarrollador full stack, con preferencia por Javascript <3. También soy aficionado del diseño, con espiritu emprendedor. Actualmente trabajando como desarrollador .NET/Js, pero con ganas de ayudar en tu próximo proyecto.'
   state.initial = true
-  state.projects = [
-    {title: 'senadores', description: 'Datos públicos disponibles en la página www.senado.cl', github: 'https://github.com/senadores-chile>', body: require('./views/_senadores')},
-    {title: 'Salvador', description: 'Pequeño sitio web que mantengo para mi hijo', github: 'https://github.com/YerkoPalma/salvador', site: 'http://salvador.palmanavea.com/', body: require('./views/_salvador')},
-    {title: 'Matrimonio', description: 'Parte de matrimonio interactivo (PWA)', site: 'https://matrimonio.palmanavea.com', body: require('./views/_matrimonio')},
-    {title: 'singleton-router', description: 'Router front end a la medida', github: 'https://github.com/YerkoPalma/singleton-router', body: require('./views/_router')},
-    {title: 'Palma contabilidad', description: 'Contador independiente', site: 'http://palmacontabilidad.cl/', body: require('./views/_contabilidad')},
-    {},
-    {},
-    {}
-  ]
+  state.projects = {
+    senadores: {title: 'senadores', description: 'Datos públicos disponibles en la página www.senado.cl', github: 'https://github.com/senadores-chile>', body: require('./views/_senadores')},
+    salvador: {title: 'Salvador', description: 'Pequeño sitio web que mantengo para mi hijo', github: 'https://github.com/YerkoPalma/salvador', site: 'http://salvador.palmanavea.com/', body: require('./views/_salvador')},
+    matrimonio: {title: 'Matrimonio', description: 'Parte de matrimonio interactivo (PWA)', site: 'https://matrimonio.palmanavea.com', body: require('./views/_matrimonio')},
+    'singleton-router': {title: 'singleton-router', description: 'Router front end a la medida', github: 'https://github.com/YerkoPalma/singleton-router', body: require('./views/_router')},
+    'palma-contabilidad': {title: 'Palma contabilidad', description: 'Contador independiente', site: 'http://palmacontabilidad.cl/', body: require('./views/_contabilidad')}
+  }
 })
 app.route('/', require('./views/main'))
 app.route('/projects', require('./views/projects'))
