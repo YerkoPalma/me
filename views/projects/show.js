@@ -1,39 +1,10 @@
 var html = require('choo/html')
-var css = require('sheetify')
-
-var container = css`
-  :host {
-    height: 97vh;
-    transition: all 0.5s;
-  }
-`
-var octoCat = css`
-  :host svg {
-    position:absolute;
-    right:0;
-    top:0;
-    mix-blend-mode:darken;
-    color:#ffffff;fill:#000000;
-  }
-  :host:hover .octo-arm {
-    animation:octocat-wave .56s;
-  }
-  @keyframes octocat-wave {
-    0%, 100% {
-      transform:rotate(0);
-    }
-    20%, 60% {
-      transform:rotate(-20deg);
-    }
-    40%, 80% {
-      transform:rotate(10deg);
-    }
-  }`
+const { container, octoCat } = require('../../lib/styles')
 
 function projectView (state) {
   var project = state.projects[state.params.project]
-  if (!project) return require('./notFound')()
-  return html`<body class="helvetica w-100 pa2 bg-black min-vh-100"">
+  if (!project) return require('../notFound')()
+  return html`<body class="helvetica black w-100 pa2 bg-black min-vh-100"">
     <div id="projectBody" class="pa3 bg-white w-100 h-100 overflow-y-scroll ${container}">
       <a class="pointer link black" href="/projects">
         <svg class="i-arrow-left" viewBox="0 0 32 32" width="64" height="64" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">

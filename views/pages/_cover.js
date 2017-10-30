@@ -1,56 +1,6 @@
 const html = require('choo/html')
-const css = require('sheetify')
+const { flipperContainer } = require('../../lib/styles')
 
-var flipperContainer = css`
-  :host {
-    perspective: 1000;
-    margin: 0 auto;
-  }
-  :host:hover .flipper, :host.hover .flipper {
-    transform: rotateY(180deg);
-  }
-  :host, .front, .back {
-    width: 180px;
-    height: 180px;
-  }
-  :host  .card .publicity, .front .card .publicity, .back .card .publicity {
-    font-size: 2.5em;
-    padding: 0px 8px;
-  }
-  .flipper {
-    transition: 0.6s;
-    transform-style: preserve-3d;
-  }
-  .front, .back {
-    backface-visibility: hidden;
-  }
-  .front {
-    z-index: 2;
-    transform: rotateY(0deg);
-  }
-  .back {
-    transform: rotateY(180deg);
-  }
-  :host:hover .flipper, :host.hover .flipper, :host.flip .flipper {
-    transform: rotateY(180deg);
-  }
-  #github {
-    top: 1rem;
-    left: 4rem;
-  }
-  #stackoverflow {
-    top: 7rem;
-    left: 4rem;
-  }
-  #linkedin {
-    top: 4rem;
-    left: 1rem;
-  }
-  #twitter {
-    top: 4rem;
-    left: 7rem;
-  }
-`
 function cover (state) {
   return html`
     <div class="${flipperContainer}" ontouchstart="this.classList.toggle('hover');">

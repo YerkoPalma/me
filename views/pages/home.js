@@ -1,13 +1,7 @@
 var html = require('choo/html')
-var css = require('sheetify')
+const { container } = require('../../lib/styles')
 const cover = require('./_cover')
 
-var container = css`
-  :host {
-    height: 97vh;
-    transition: all 0.5s;
-  }
-`
 function mainView (state) {
   return html`
   <body class="helvetica w-100 pa2 bg-black min-vh-100">

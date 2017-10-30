@@ -1,5 +1,5 @@
 var html = require('choo/html')
-var css = require('sheetify')
+const { container } = require('../../lib/styles')
 
 var bgColors = [
   'light-red',
@@ -11,13 +11,6 @@ var bgColors = [
   'yellow',
   'light-green'
 ]
-
-var container = css`
-  :host {
-    height: 97vh;
-    transition: all 0.5s;
-  }
-`
 
 var renderProjects = function (projects) {
   bgColors.sort(function () { return 0.5 - Math.random() })
@@ -39,7 +32,7 @@ function projectsView (state) {
   var projects = state.projects
   console.log('projects view', projects)
   return html`
-  <body class="helvetica w-100 pa2 bg-black min-vh-100">
+  <body class="helvetica black w-100 pa2 bg-black min-vh-100">
     <div class="pa3 bg-white w-100 h-100 overflow-y-scroll ${container}">
       <a class="pointer link black" href="/">
         <svg class="i-arrow-left" viewBox="0 0 32 32" width="64" height="64" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
