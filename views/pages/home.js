@@ -1,6 +1,6 @@
 var html = require('choo/html')
 var css = require('sheetify')
-const cover = require('../components/cover')
+const cover = require('./_cover')
 
 var container = css`
   :host {
