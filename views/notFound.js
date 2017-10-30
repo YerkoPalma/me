@@ -1,5 +1,5 @@
 var html = require('choo/html')
-const { container } = require('../../lib/styles')
+const { container } = require('../lib/styles')
 
 function notFoundView (params, store) {
   return html`<body class="w-100 pa2 bg-black min-vh-100">
