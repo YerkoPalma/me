@@ -28,5 +28,6 @@ if (process.env.NODE_ENV === 'production') {
 app.route('/', require('./views/pages/home'))
 app.route('/projects', require('./views/projects/index'))
 app.route('/projects/:project', require('./views/projects/show'))
+app.route('/blog', require('./views/posts/index'))
 app.route('/*', require('./views/notFound'))
 app.mount('body')
