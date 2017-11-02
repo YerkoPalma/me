@@ -1,7 +1,7 @@
 var html = require('choo/html')
 const { container } = require('../lib/styles')
 
-function notFoundView (params, store) {
+function notFoundView (state, emit) {
   return html`<body class="w-100 pa2 bg-black min-vh-100">
     <div class="pa7-l pt6-l pv5 bg-white w-100 h-100 overflow-y-scroll ${container}">
       <h1 class=" dib f-headline word-wrap ma0 lh-title black tl w-100">
