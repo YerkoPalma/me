@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "standard --verbose | snazzy",
-    "start": "budo -p 8080 -H 0.0.0.0 index.js:bundle.js -- -t sheetify",
+    "start": "budo -p 8080 -H 0.0.0.0 -d ./views/posts index.js:bundle.js -- -t sheetify",
     "build": "NODE_ENV=production npm run build:js && npm run build:html && npm run build:assets",
     "build:js": "mkdir -p dist && browserify -t sheetify -p [ css-extract -o dist/bundle.css ] -p tinyify index.js -o dist/bundle.js",
     "build:html": "./node_modules/.bin/htmlminify -o dist/index.html index.html && cp dist/index.html dist/404.html",
@@ -31,7 +31,9 @@
     "tachyons": "^4.8.1"
   },
   "devDependencies": {
+    "brfs": "^1.4.3",
     "browserify": "^14.5.0",
+    "browserify-dynamic-import": "github:goto-bus-stop/browserify-dynamic-import",
     "budo": "^10.0.4",
     "css-extract": "^1.2.0",
     "gh-pages": "^1.0.0",
