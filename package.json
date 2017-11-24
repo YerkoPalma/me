@@ -10,7 +10,7 @@
     "build": "NODE_ENV=production npm run build:js && npm run build:html && npm run build:assets",
     "build:js": "mkdir -p dist && browserify -t sheetify -p [ css-extract -o dist/bundle.css ] -p tinyify index.js -o dist/bundle.js",
     "build:html": "./node_modules/.bin/htmlminify -o dist/index.html index.html && cp dist/index.html dist/404.html",
-    "build:assets": "echo yerkopalma.me > dist/CNAME && cp favicon.ico dist && workbox-cli generate:sw",
+    "build:assets": "echo yerkopalma.me > dist/CNAME && cp favicon.ico dist && cp views/posts/*.md dist && workbox generate:sw",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "standard": {
