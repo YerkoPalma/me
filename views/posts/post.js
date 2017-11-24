@@ -1,9 +1,10 @@
+/* global fetch */
 var html = require('choo/html')
 var md = require('../../lib/md')
 const { container } = require('../../lib/styles')
 var postHtml
+
 function postView (state, emit) {
-  
   if (!postHtml) {
     fetch('../_' + state.params.post + '.md')
     .then(response => response.text())
@@ -15,7 +16,7 @@ function postView (state, emit) {
 
   return html`<body class="helvetica black w-100 pa2 bg-black min-vh-100">
     <div class="pa7-l pv6-l pv5 bg-white w-100 h-100 overflow-y-scroll ${container}">
-      ${postHtml ? postHtml : html`<h2>Loading...</h2>`}
+      ${postHtml || html`<h2>Loading...</h2>`}
     </div>
   </body>`
 }
