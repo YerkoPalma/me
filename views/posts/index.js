@@ -8,9 +8,9 @@ var dom = md`
 ${posts.reduce((_, post) => {
   return _ + `
   ## [${post.title}](${post.link})
-  
+
   ${post.description}
-  
+
   ---
 `
 }, '')}
