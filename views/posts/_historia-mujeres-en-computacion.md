@@ -20,8 +20,8 @@ La respuesta a esta pregunta nos dice más sobre los mecanismos de nuestra socie
 
 Y si esos decepcionantes mecanismos nos dicen algo, es que _hay un significante espacio para mejorar en el rol que dejamos que el genero tome_.
 
-![](http://s3.amazonaws.com/blog.invisionapp.com/uploads/2017/03/women-history-1.jpg)
-Reporte de personal femenino en empleados de Silicon Valley
+<p class="tc i f4 f3-ns lh-copy measure-wide georgia"><img src="http://s3.amazonaws.com/blog.invisionapp.com/uploads/2017/03/women-history-1.jpg" alt="" class="mw-100 w-50 db center">
+Reporte de personal femenino en empleados de Silicon Valley</p>
 
 Y con la luz del cambio social brillando a travez de las grietas de nuestra defectuosa estructura social, _debemos seguir identificando oportunidades de cambio real_, incluso si hay fuerzas en curso que quieren impedirlo.
 
@@ -37,6 +37,21 @@ Aún así, las narrativas que detallan la historia de muchas de las contribucion
 
 Lo que la historia popular del ENIAC [no cuenta](https://www.npr.org/sections/alltechconsidered/2014/10/06/345799830/the-forgotten-female-programmers-who-created-modern-tech), es el rol de los _cientos_ de mujeres, y en particular, 6 importantes programadoras.
 
-![](https://s3.amazonaws.com/blog.invisionapp.com/uploads/2017/03/women-history-2.jpg)
-J. Presper Eckert y John W. Mauchly ([Ohio History Central](http://www.ohiohistorycentral.org/w/John_Mauchly)).
+<p class="tc i f4 f3-ns lh-copy measure-wide georgia"><img src="https://s3.amazonaws.com/blog.invisionapp.com/uploads/2017/03/women-history-2.jpg" alt="" class="mw-100 w-50 db center">
+J. Presper Eckert y John W. Mauchly (<a href="http://www.ohiohistorycentral.org/w/John_Mauchly" class="link pointer bb b--dashed bt-0 bl-0 br-0 bw2 bg-animate hover-bg-light-red b--light-red black">Ohio History Central</a>).</p>
 
+A saber, Kay McNulty, Betty Jennings, Betty Snyder, Marlyn Meltzer, Fran Bilas, y Ruth Lichterman fueron las programadoras originales del primer computador electronico estadounidense, y tradicionalmente son poco más que una nota al pie de la historia del ENIAC.
+
+> Tenemos que cambiar la narrativa.
+
+Incluso Wikipedia - que parece ser la más popular fuente de información precisa (o semi-precisa) - dedico solo tres parrafos de su extenso articulo sobre el ENIAC que ellos llamaron "Las chicas el ENIAC".
+
+Este no es un incidente aislado, tampoco. Es una tendencia en los registros de la historia de la computación.
+
+<p class="tc i f4 f3-ns lh-copy measure-wide georgia"><img src="https://s3.amazonaws.com/blog.invisionapp.com/uploads/2017/03/women-history-thumb.jpg" alt="" class="mw-100 w-50 db center">
+Mujeres operando el panel de control principal del ENIAC. Imagen de la biblioteca tecnica del ARL. Izquierda: Betty Jennings, derecha: Fran Bilas</p>
+
+## Entonces... ¿por qué pasó esto?
+
+En los Estados Unidos, a medida que la computación se volcía una industria cada vez más critica, 
+In the United States, as computing became an evermore critical industry, with increasingly favorable odds of vital (and high-paying) jobs, the traditional gender roles of our society were challenged by the dominant role of women in the industry.
