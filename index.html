@@ -1,51 +1,68 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html lang="en-US">
   <head>
-    <meta charset="utf-8">
-    <link href="/bundle.css" rel="stylesheet">
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <style type="text/css">
-      * {
-  box-sizing: border-box; }
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="personal ui components" />
+    <title>Yerko's Personal website</title>
+    <!-- Preload stuff -->
+    <link rel="preload" as="style" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" onload="this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="/styles/style.css" onload="this.rel='stylesheet'" />
 
-html,
-body {
-  font-family: "proxima-nova", sans-serif;
-  color: #202020;
-  margin: 0;
-  min-height: 100%;
-  padding: 0;
-  width: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-body {
-   display: table;
-   height: 100vh;
- }
- .loader {
-   display: table-cell;
-   vertical-align: middle;
- }
-@keyframes opacityIn {
-  0% {
-    opactity: 0; }
-  100% {
-    opactity: 1; } }
+    <!-- Normal load -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
 
-html,
-body {
-  background: #ed5565;
-  color: #fff; }
-.pacman {
-   position: relative;
-   width: 0;
-   margin: 0 auto;
- }
-    .pacman>div:first-of-type,.pacman>div:nth-child(2){width:0;height:0;border-right:25px solid transparent;border-top:25px solid #fff;border-left:25px solid #fff;border-bottom:25px solid #fff;border-radius:25px;position:relative;left:-30px}@-webkit-keyframes rotate_pacman_half_up{0%,100%{-webkit-transform:rotate(270deg);transform:rotate(270deg)}50%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate_pacman_half_up{0%,100%{-webkit-transform:rotate(270deg);transform:rotate(270deg)}50%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes rotate_pacman_half_down{0%,100%{-webkit-transform:rotate(90deg);transform:rotate(90deg)}50%{-webkit-transform:rotate(0);transform:rotate(0)}}@keyframes rotate_pacman_half_down{0%,100%{-webkit-transform:rotate(90deg);transform:rotate(90deg)}50%{-webkit-transform:rotate(0);transform:rotate(0)}}@-webkit-keyframes pacman-balls{75%{opacity:.7}100%{-webkit-transform:translate(-100px,-6.25px);transform:translate(-100px,-6.25px)}}@keyframes pacman-balls{75%{opacity:.7}100%{-webkit-transform:translate(-100px,-6.25px);transform:translate(-100px,-6.25px)}}.pacman{position:relative}.pacman>div:nth-child(3){-webkit-animation:pacman-balls 1s -.66s infinite linear;animation:pacman-balls 1s -.66s infinite linear}.pacman>div:nth-child(4){-webkit-animation:pacman-balls 1s -.33s infinite linear;animation:pacman-balls 1s -.33s infinite linear}.pacman>div:nth-child(5){-webkit-animation:pacman-balls 1s 0s infinite linear;animation:pacman-balls 1s 0s infinite linear}.pacman>div:first-of-type{-webkit-animation:rotate_pacman_half_up .5s 0s infinite;animation:rotate_pacman_half_up .5s 0s infinite}.pacman>div:nth-child(2){-webkit-animation:rotate_pacman_half_down .5s 0s infinite;animation:rotate_pacman_half_down .5s 0s infinite;margin-top:-50px}.pacman>div:nth-child(3),.pacman>div:nth-child(4),.pacman>div:nth-child(5),.pacman>div:nth-child(6){background-color:#fff;border-radius:100%;margin:2px;width:10px;height:10px;position:absolute;-webkit-transform:translate(0,-6.25px);transform:translate(0,-6.25px);top:25px;left:70px}
-    </style>
+    <!-- polyfills -->
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=fetch%2CSymbol.iterator%2CSymbol%2CElement.prototype.remove"></script>
   </head>
-  <body>
-    <div class="loader"><div class="pacman"><div></div><div></div><div></div><div></div><div></div></div></div>
-  <script src="/bundle.js"></script>
+  <body class="helvetica w-100 pa2 bg-black min-vh-100">
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.10/webcomponents-loader.js"></script>
+    <pacman-loader wait-for="flipper-card,.container"></pacman-loader>
+    <div class="pa3 bg-white w-100 h-100 overflow-x-hidden container">
+      <nav class="db absolute top-0 left-0 dt-l w-100 border-box pa3 ph5-l navbar">
+        <a class="dn db-l db-m db-ns dtc-l v-mid mid-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l" href="#" title="Home">
+          <img src="https://s.gravatar.com/avatar/d809533c5ce964b709e2b38e6573973b?s=240" class="dib w2 h2 br-100" alt="Yerko Palma">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+          <a href="/projects" class="link dim pointer dark-gray tracked-mega fw6 f6 f5-l dib mr3 mr4-l" title="Proyectos">Proyectos</a>
+          <a target="_blank" class="link dim dark-gray tracked-mega fw6 f6 f5-l dib" href="https://blog.yerkopalma.me" title="Blog">Blog</a>
+        </div>
+      </nav>
+      <div class="mv4 mv5-lcf w-100">
+        <div class="mw5 mw7-ns center ph5-ns mh5">
+          <flipper-card style="display: none;" custom-style="/styles/flipper-card.css">
+            <div slot="front" class="front absolute top-0">
+              <img alt="Yerko Palma" src="https://s.gravatar.com/avatar/d809533c5ce964b709e2b38e6573973b?s=180" class="br-100 center-block db" >
+            </div>
+            <div slot="back" class="back br-100 absolute bg-light-red top-0">
+              <div class="card w-100 h-100 silver">
+                <a title="Github Profile" rel="noopener" id="github" class="publicity absolute white br-pill bg-animate hover-bg-dark-gray" href="https://github.com/YerkoPalma" target="_blank">
+                  <svg viewBox="0 0 16 16" width="32" height="32" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8" /></svg>
+                </a>
+                <a title="Stackoverflow Profile" rel="noopener" id="stackoverflow" class="publicity absolute white br-pill bg-animate hover-bg-dark-gray" href="https://stackoverflow.com/users/3178237/yerko-palma" target="_blank">
+                  <svg viewBox="0 0 16 16" width="32" height="32" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.658 14.577v-4.27h1.423V16H1.23v-5.693h1.42v4.27h10.006zm-8.583-1.423h7.16V11.73h-7.16v1.424zm.173-3.235l6.987 1.46.3-1.38L4.55 8.54l-.302 1.38zm.906-3.37l6.47 3.02.602-1.3-6.47-3.02-.602 1.29zm1.81-3.19l5.478 4.57.906-1.08L7.87 2.28l-.9 1.078zM10.502 0L9.338.863l4.27 5.735 1.164-.862L10.5 0z" /></svg>
+                </a>
+                <a title="Twitter Profile" rel="noopener" id="twitter" class="publicity absolute white br-pill bg-animate hover-bg-dark-gray" href="https://www.linkedin.com/in/yerko-palma-b52a5a28/" target="_blank">
+                  <svg viewBox="0 0 16 16" width="32" height="32" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero" /></svg>
+                </a>
+                <a title="Linkedin Profile" rel="noopener" id="linkedin" class="publicity absolute white br-pill bg-animate hover-bg-dark-gray" href="https://www.linkedin.com/in/yerko-palma-b52a5a28/" target="_blank">
+                  <svg viewBox="0 0 16 16" width="32" height="32" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero" /></svg>
+                </a>
+              </div>
+            </div>
+          </flipper-card>
+          <h1 class="near-black lh-copy tc mb0">Yerko Palma</h1>
+          <p class="tc f3 light-red fw6 mv0">Full stack developer</p>
+          <p class="f5 near-black lh-copy tc fw6">Desarrollador full stack, con preferencia por Javascript <3. También soy aficionado del diseño, con espiritu emprendedor. Actualmente trabajando como desarrollador .NET/Js.</p>
+        </div>
+        <footer class="pv3 ph3 ph5-m ph6-l near-black">
+          <small class="f6 db tc">© 2019 All Rights Reserved</small>
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="https://unpkg.com/@yerkopalma/ui?module"></script>
+    <script nomodule src="https://unpkg.com/@yerkopalma/ui"></script>
   </body>
 </html>

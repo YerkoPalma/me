@@ -1,0 +1,11 @@
+.front, .back,
+::slotted(.front), ::slotted(.back),
+[slot="back"], [slot="front"] {
+  width: 180px;
+  height: 180px;
+}
+:host .card .publicity, .front .card .publicity, .back .card .publicity {
+  font-size: 2.5em;
+  padding: 0px 8px;
+}
+

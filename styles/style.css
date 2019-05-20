@@ -1,0 +1,24 @@
+.container {
+  height: 97vh;
+  transition: all 0.5s;
+}
+.card .publicity, .front .card .publicity, .back .card .publicity {
+  font-size: 2.5em;
+  padding: 0px 8px;
+}
+#github {
+  top: 1rem;
+  left: 4rem;
+}
+#stackoverflow {
+  top: 7rem;
+  left: 4rem;
+}
+#linkedin {
+  top: 4rem;
+  left: 1rem;
+}
+#twitter {
+  top: 4rem;
+  left: 7rem;
+}
