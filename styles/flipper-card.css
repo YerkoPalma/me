@@ -3,9 +3,17 @@
 [slot="back"], [slot="front"] {
   width: 180px;
   height: 180px;
+  border-radius: 100%;
+}
+[slot="back"] .br-100, [slot="front"] .br-100{
+  border-radius: 100%;
 }
 :host .card .publicity, .front .card .publicity, .back .card .publicity {
   font-size: 2.5em;
   padding: 0px 8px;
 }
-
+.br-100,
+:host .br-100,
+::slotted(div .br-100) {
+  border-radius: 100%;
+}
