@@ -1,1 +1,45 @@
-<!DOCTYPE html><html dir="ltr" lang="en"><head><meta charset="utf-8"/><link href="/bundle.css" rel="stylesheet"/><meta content="width=device-width,initial-scale=1" name="viewport"/><style type="text/css">*{box-sizing:border-box}body,html{font-family:proxima-nova,sans-serif;color:#202020;margin:0;min-height:100%;padding:0;width:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:#ed5565}body{display:table;height:100vh}.loader{display:table-cell;vertical-align:middle}@keyframes opacityIn{0%{opactity:0}100%{opactity:1}}.pacman{width:0;margin:0 auto;position:relative}.pacman>div:first-of-type,.pacman>div:nth-child(2){width:0;height:0;border-right:25px solid transparent;border-top:25px solid #fff;border-left:25px solid #fff;border-bottom:25px solid #fff;border-radius:25px;position:relative;left:-30px}@-webkit-keyframes rotate_pacman_half_up{0%,100%{-webkit-transform:rotate(270deg);transform:rotate(270deg)}50%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate_pacman_half_up{0%,100%{-webkit-transform:rotate(270deg);transform:rotate(270deg)}50%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes rotate_pacman_half_down{0%,100%{-webkit-transform:rotate(90deg);transform:rotate(90deg)}50%{-webkit-transform:rotate(0);transform:rotate(0)}}@keyframes rotate_pacman_half_down{0%,100%{-webkit-transform:rotate(90deg);transform:rotate(90deg)}50%{-webkit-transform:rotate(0);transform:rotate(0)}}@-webkit-keyframes pacman-balls{75%{opacity:.7}100%{-webkit-transform:translate(-100px,-6.25px);transform:translate(-100px,-6.25px)}}@keyframes pacman-balls{75%{opacity:.7}100%{-webkit-transform:translate(-100px,-6.25px);transform:translate(-100px,-6.25px)}}.pacman>div:nth-child(3){-webkit-animation:pacman-balls 1s -.66s infinite linear;animation:pacman-balls 1s -.66s infinite linear}.pacman>div:nth-child(4){-webkit-animation:pacman-balls 1s -.33s infinite linear;animation:pacman-balls 1s -.33s infinite linear}.pacman>div:nth-child(5){-webkit-animation:pacman-balls 1s 0s infinite linear;animation:pacman-balls 1s 0s infinite linear}.pacman>div:first-of-type{-webkit-animation:rotate_pacman_half_up .5s 0s infinite;animation:rotate_pacman_half_up .5s 0s infinite}.pacman>div:nth-child(2){-webkit-animation:rotate_pacman_half_down .5s 0s infinite;animation:rotate_pacman_half_down .5s 0s infinite;margin-top:-50px}.pacman>div:nth-child(3),.pacman>div:nth-child(4),.pacman>div:nth-child(5),.pacman>div:nth-child(6){background-color:#fff;border-radius:100%;margin:2px;width:10px;height:10px;position:absolute;-webkit-transform:translate(0,-6.25px);transform:translate(0,-6.25px);top:25px;left:70px}</style></head><body><div class="loader"><div class="pacman"><div></div><div></div><div></div><div></div><div></div></div></div><script src="/bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+
+  <title>Svelte app</title>
+
+  <link rel='icon' href='/favicon.ico'>
+  <link rel='stylesheet' href='/global.css'>
+  <link rel='stylesheet' href='/build/bundle.css'>
+
+  <script defer src='/build/bundle.js'></script>
+</head>
+
+<body class="font-sans w-full p-2 bg-black min-h-screen">
+  <main class="p-3 bg-white w-full h-full overflow-y-auto overflow-x-hidden">
+    <div class="my-8 w-full">
+      <nav class="block absolute top-0 left-0 lg:table w-full border-box p-4 lg:px-16">
+        <a class="hidden table-cell lg:table-cell md:table-cell xs:table-cell align-middle gray-300 hover:gray-500 w-full lg:w-1/4 lg:text-left mb-2 lg:mb-0" href="https://github.com/YerkoPalma" target="_blank">
+          <!-- <img src="https://s.gravatar.com/avatar/d809533c5ce964b709e2b38e6573973b?s=240" class="inline-block w-8 h-8 rounded-full" alt="Yerko Palma"> -->
+          <svg viewBox="0 0 16 16" width="32" height="32" fill="#333" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8" /></svg>
+        </a>
+        <div class="block lg:table-cell align-middle w-full lg:w-3/4 text-center lg:text-right">
+          <a target="_blank" href="https://resume.yerkopalma.me/" class="text-gray-700 visited:text-gray-700 tracking-wide hover:no-underline hover:text-gray-500 tracked-mega font-semibold text-sm lg:text-base inline-block mx-4 lg:mx-8" title="Curriculum">Curriculum</a>
+          <a target="_blank" href="https://blog.yerkopalma.me/" class="text-gray-700 visited:text-gray-700 tracking-wide hover:no-underline hover:text-gray-500 tracked-mega font-semibold text-sm lg:text-base inline-block mx-4 lg:mx-8" title="Blog">Blog</a>
+        </div>
+      </nav>
+
+      <div class="max-w-xs md:max-w-3xl mx-auto md:px-16 mx-16">
+        <div class="mx-auto my-0 w-44 h-44">
+          <div class="relative">
+            <div class="absolute top-0">
+              <img alt="Yerko Palma" src="https://s.gravatar.com/avatar/d809533c5ce964b709e2b38e6573973b?s=180" class="rounded-full block" >
+            </div>
+          </div>
+        </div>
+        <h1 class="text-3xl text-gray-800 text-center mb-0 font-bold mt-4">Yerko Palma</h1>
+        <p class="text-center text-2xl text-rose-400 font-semibold my-0">Full stack developer</p>
+        <p class="my-4 text-base text-gray-800 text-center font-semibold">Desarrollador full stack, con preferencia por Javascript <3. Actualmente trabajando como desarrollador .NET/Js, pero con ganas de ayudar en tu próximo proyecto.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
