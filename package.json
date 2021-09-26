@@ -12,6 +12,7 @@
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
+    "cssnano": "^5.0.8",
     "gh-pages": "^3.2.3",
     "postcss": "^8.3.6",
     "postcss-import": "^14.0.2",
