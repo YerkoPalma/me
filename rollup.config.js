@@ -38,7 +38,8 @@ export default {
   },
   plugins: [
     postcss({
-      extract: path.resolve('public/build/bundle.css')
+      extract: path.resolve('public/build/bundle.css'),
+      minimize: production
     }),
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
